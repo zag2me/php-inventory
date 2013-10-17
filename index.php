@@ -141,7 +141,7 @@ include 'settings.php';
 				
 				
 			</div>
-			<p class="meta">Total Found &nbsp;|&nbsp; <?php echo $counter;?> Devices</p>
+			<p class="meta">Total Found &nbsp;|&nbsp; <?php $counter = $counter - 1 ; echo $counter;?> Devices</p>
 		</div>
 		
 	</div>
