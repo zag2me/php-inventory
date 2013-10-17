@@ -46,11 +46,8 @@ include 'settings.php';
 				<table><tr>
 				<td width='150'><b>Name</b></td>
 				<td width='80'><b>Brand</b></td>
-				<td width='80'><b>RAM</b></td>
-				<td width='80'><b>CPU</b></td>
-				<td width='80'><b>HDD</b></td>
-				<td width='80'><b>Size</b></td>
-				<td width='80'><b>Free</b></td></tr>
+				<td width='200'><b>IP Address</b></td>
+				<td width='200'><b>MAC Address</b></td>
 				
 				<?php
 				
@@ -82,13 +79,8 @@ include 'settings.php';
 					
 					// Define easy name variables
 					$name = $data[3];
-					$hddtotal = $data[21];
-					$hddfree = $data[22];
-					$hddfreeint = strlen($hddfree);
-					$hddtype = $data[25];
-					$ramtotal = $data[6];
-					$cpu = $data[34];
-					$ramtotal = round(number_format((substr($ramtotal, 0, 2)/10),1));
+					$ip = $data[2];
+					$mac = $data[0];
 					$brand = $data[12];
 					
 					// Print the device table
@@ -107,30 +99,13 @@ include 'settings.php';
 					}
 					if ($checkbrand != 1) {echo "<td></td>";}
 					
-					// Display the RAM total
-					echo "<td>".$ramtotal." GB</td>";
-						
-					// Loop through the CPU list and display an icon
-					foreach($cpuconfig as $cpuname=>$cpupic)
-					{
-						if (strpos($cpu,$cpuname) !== false) {
-							echo "<td><img src='images/cpu/$cpupic'></td>";
-						$checkcpu = 1;
-						}
-					}
-					if ($checkcpu != 1) {echo "<td></td>";}
+					// Display the IP
+					echo "<td>".$ip."</td>";			
+				
+					// Display the Serial
+					echo "<td>".$mac."</td>";	
 					
-					// Display the Hard Disk Type
-					if (strpos($hddtype,'SSD') !== false) {echo "<td><img src='images/disk/ssd.png'></td>";}
-					else {echo "<td><img src='images/disk/harddisk.png'></td>";}
-					
-					// Display the Hard Disk Total
-					echo "<td>".$str = str_replace("1:", "", $hddtotal)."</td>";
-					
-					// Display the Hard Disk Free. Warn in red if under 10GB left
-					if ($hddfreeint < 8) {echo "<td><font color='red'>".$str = str_replace("1:", "", $hddfree)."</font></td>";}
-					else {echo "<td>".$str = str_replace("1:", "", $hddfree)."</td>";}
-					
+				
 					//End device item row
 					echo "</tr>";
 					}
