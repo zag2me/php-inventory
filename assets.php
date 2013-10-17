@@ -100,10 +100,10 @@ include 'settings.php';
 					if ($checkbrand != 1) {echo "<td></td>";}
 					
 					// Display the Model Name
-					echo "<td>".$model." GB</td>";			
+					echo "<td>".$model."</td>";			
 				
 					// Display the Serial
-					echo "<td>".$serial." GB</td>";	
+					echo "<td>".$serial."</td>";	
 					
 				
 					//End device item row
