@@ -27,6 +27,8 @@ include 'settings.php';
 <div id="menu">
 	<ul>
 		<li class="first"><a href="index.php" accesskey="1" title="">Home</a></li>
+		<li><a href="network.php" accesskey="2" title="">Network</a></li>
+		<li><a href="assets.php" accesskey="2" title="">Assets</a></li>
 		<li><a href="instructions.php" accesskey="2" title="">Instructions</a></li>
 		<li><a href="about.php" accesskey="4" title="">About</a></li>
 	</ul>
