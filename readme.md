@@ -19,3 +19,8 @@ Install
 8) Change any settings in the 'settings.php' file such as Brands and CPU search strings. You can also change the locations of the csv file if you wish.
 
 9) Load up a web browser and navigate to http://localhost/inventory
+
+Screenshots
+===========
+
+![Main Page](https://raw.githubusercontent.com/zag2me/php-inventory/master/screenshots/screenshot001.png "Main Page")
